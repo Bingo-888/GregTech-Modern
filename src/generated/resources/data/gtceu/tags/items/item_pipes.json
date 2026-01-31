@@ -1,0 +1,12 @@
+{
+  "values": [
+    "#gtceu:item_pipes/small",
+    "#gtceu:item_pipes/normal",
+    "#gtceu:item_pipes/large",
+    "#gtceu:item_pipes/huge",
+    "#gtceu:item_pipes/restrictive_small",
+    "#gtceu:item_pipes/restrictive_normal",
+    "#gtceu:item_pipes/restrictive_large",
+    "#gtceu:item_pipes/restrictive_huge"
+  ]
+}

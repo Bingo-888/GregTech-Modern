@@ -126,6 +126,47 @@ public class CustomTags {
     public static final TagKey<Item> STEP_BOOTS = TagUtil.createModItemTag("step_boots");
     public static final TagKey<Item> RUBBER_LOGS = TagUtil.createModItemTag("rubber_logs");
 
+    // Wires
+    public static final TagKey<Item> WIRES = TagUtil.createModItemTag("wires");
+    public static final TagKey<Item> WIRES_SINGLE = TagUtil.createModItemTag("wires/single");
+    public static final TagKey<Item> WIRES_DOUBLE = TagUtil.createModItemTag("wires/double");
+    public static final TagKey<Item> WIRES_QUADRUPLE = TagUtil.createModItemTag("wires/quadruple");
+    public static final TagKey<Item> WIRES_OCTAL = TagUtil.createModItemTag("wires/octal");
+    public static final TagKey<Item> WIRES_HEX = TagUtil.createModItemTag("wires/hex");
+
+    // Cables
+    public static final TagKey<Item> CABLES = TagUtil.createModItemTag("cables");
+    public static final TagKey<Item> CABLES_SINGLE = TagUtil.createModItemTag("cables/single");
+    public static final TagKey<Item> CABLES_DOUBLE = TagUtil.createModItemTag("cables/double");
+    public static final TagKey<Item> CABLES_QUADRUPLE = TagUtil.createModItemTag("cables/quadruple");
+    public static final TagKey<Item> CABLES_OCTAL = TagUtil.createModItemTag("cables/octal");
+    public static final TagKey<Item> CABLES_HEX = TagUtil.createModItemTag("cables/hex");
+
+    // Fluid Pipes
+    public static final TagKey<Item> FLUID_PIPES = TagUtil.createModItemTag("fluid_pipes");
+    public static final TagKey<Item> FLUID_PIPES_TINY = TagUtil.createModItemTag("fluid_pipes/tiny");
+    public static final TagKey<Item> FLUID_PIPES_SMALL = TagUtil.createModItemTag("fluid_pipes/small");
+    public static final TagKey<Item> FLUID_PIPES_NORMAL = TagUtil.createModItemTag("fluid_pipes/normal");
+    public static final TagKey<Item> FLUID_PIPES_LARGE = TagUtil.createModItemTag("fluid_pipes/large");
+    public static final TagKey<Item> FLUID_PIPES_HUGE = TagUtil.createModItemTag("fluid_pipes/huge");
+    public static final TagKey<Item> FLUID_PIPES_QUADRUPLE = TagUtil.createModItemTag("fluid_pipes/quadruple");
+    public static final TagKey<Item> FLUID_PIPES_NONUPLE = TagUtil.createModItemTag("fluid_pipes/nonuple");
+
+    // Item Pipes
+    public static final TagKey<Item> ITEM_PIPES = TagUtil.createModItemTag("item_pipes");
+    public static final TagKey<Item> ITEM_PIPES_SMALL = TagUtil.createModItemTag("item_pipes/small");
+    public static final TagKey<Item> ITEM_PIPES_NORMAL = TagUtil.createModItemTag("item_pipes/normal");
+    public static final TagKey<Item> ITEM_PIPES_LARGE = TagUtil.createModItemTag("item_pipes/large");
+    public static final TagKey<Item> ITEM_PIPES_HUGE = TagUtil.createModItemTag("item_pipes/huge");
+    public static final TagKey<Item> ITEM_PIPES_RESTRICTIVE_SMALL = TagUtil
+            .createModItemTag("item_pipes/restrictive_small");
+    public static final TagKey<Item> ITEM_PIPES_RESTRICTIVE_NORMAL = TagUtil
+            .createModItemTag("item_pipes/restrictive_normal");
+    public static final TagKey<Item> ITEM_PIPES_RESTRICTIVE_LARGE = TagUtil
+            .createModItemTag("item_pipes/restrictive_large");
+    public static final TagKey<Item> ITEM_PIPES_RESTRICTIVE_HUGE = TagUtil
+            .createModItemTag("item_pipes/restrictive_huge");
+
     public static final TagKey<Block> CLEANROOM_DOORS = TagUtil.createModBlockTag("cleanroom_doors");
 
     public static final TagKey<Item> CHEM_BATH_WASHABLE = TagUtil.createModItemTag("chemical_bath_washable");

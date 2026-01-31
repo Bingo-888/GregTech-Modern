@@ -1,0 +1,30 @@
+{
+  "values": [
+    "gtceu:tin_alloy_large_fluid_pipe",
+    "gtceu:polybenzimidazole_large_fluid_pipe",
+    "gtceu:chromium_large_fluid_pipe",
+    "gtceu:tungsten_large_fluid_pipe",
+    "gtceu:iridium_large_fluid_pipe",
+    "gtceu:lead_large_fluid_pipe",
+    "gtceu:gold_large_fluid_pipe",
+    "gtceu:tungsten_steel_large_fluid_pipe",
+    "gtceu:niobium_titanium_large_fluid_pipe",
+    "gtceu:tungsten_carbide_large_fluid_pipe",
+    "gtceu:bronze_large_fluid_pipe",
+    "gtceu:titanium_large_fluid_pipe",
+    "gtceu:vanadium_steel_large_fluid_pipe",
+    "gtceu:neutronium_large_fluid_pipe",
+    "gtceu:steel_large_fluid_pipe",
+    "gtceu:potin_large_fluid_pipe",
+    "gtceu:aluminium_large_fluid_pipe",
+    "gtceu:polytetrafluoroethylene_large_fluid_pipe",
+    "gtceu:polyethylene_large_fluid_pipe",
+    "gtceu:naquadah_large_fluid_pipe",
+    "gtceu:copper_large_fluid_pipe",
+    "gtceu:stainless_steel_large_fluid_pipe",
+    "gtceu:duranium_large_fluid_pipe",
+    "gtceu:europium_large_fluid_pipe",
+    "gtceu:treated_wood_large_fluid_pipe",
+    "gtceu:wood_large_fluid_pipe"
+  ]
+}

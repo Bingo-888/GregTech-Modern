@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#gtceu:cables/single",
+    "#gtceu:cables/double",
+    "#gtceu:cables/quadruple",
+    "#gtceu:cables/octal",
+    "#gtceu:cables/hex"
+  ]
+}

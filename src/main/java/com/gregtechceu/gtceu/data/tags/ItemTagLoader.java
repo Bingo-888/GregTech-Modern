@@ -4,6 +4,7 @@ import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.api.data.chemical.material.MarkerMaterials.Color;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.common.data.GTItems;
+import com.gregtechceu.gtceu.common.data.GTMaterialBlocks;
 import com.gregtechceu.gtceu.common.data.GTMaterialItems;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 
@@ -194,5 +195,110 @@ public class ItemTagLoader {
         provider.addTag(Tags.Items.ENCHANTING_FUELS)
                 .add(GTMaterialItems.MATERIAL_ITEMS.get(gem, Lazurite).get())
                 .add(GTMaterialItems.MATERIAL_ITEMS.get(gem, Sodalite).get());
+
+        // Wires and Cables
+        generateWireAndCableTags(provider);
+
+        // Fluid Pipes
+        generateFluidPipeTags(provider);
+
+        // Item Pipes
+        generateItemPipeTags(provider);
+    }
+
+    private static void generateWireAndCableTags(RegistrateItemTagsProvider provider) {
+        // Wires
+        GTMaterialBlocks.CABLE_BLOCKS.row(wireGtSingle).values()
+                .forEach(entry -> provider.addTag(CustomTags.WIRES_SINGLE).add(entry.asItem()));
+        GTMaterialBlocks.CABLE_BLOCKS.row(wireGtDouble).values()
+                .forEach(entry -> provider.addTag(CustomTags.WIRES_DOUBLE).add(entry.asItem()));
+        GTMaterialBlocks.CABLE_BLOCKS.row(wireGtQuadruple).values()
+                .forEach(entry -> provider.addTag(CustomTags.WIRES_QUADRUPLE).add(entry.asItem()));
+        GTMaterialBlocks.CABLE_BLOCKS.row(wireGtOctal).values()
+                .forEach(entry -> provider.addTag(CustomTags.WIRES_OCTAL).add(entry.asItem()));
+        GTMaterialBlocks.CABLE_BLOCKS.row(wireGtHex).values()
+                .forEach(entry -> provider.addTag(CustomTags.WIRES_HEX).add(entry.asItem()));
+
+        provider.addTag(CustomTags.WIRES)
+                .addTag(CustomTags.WIRES_SINGLE)
+                .addTag(CustomTags.WIRES_DOUBLE)
+                .addTag(CustomTags.WIRES_QUADRUPLE)
+                .addTag(CustomTags.WIRES_OCTAL)
+                .addTag(CustomTags.WIRES_HEX);
+
+        // Cables
+        GTMaterialBlocks.CABLE_BLOCKS.row(cableGtSingle).values()
+                .forEach(entry -> provider.addTag(CustomTags.CABLES_SINGLE).add(entry.asItem()));
+        GTMaterialBlocks.CABLE_BLOCKS.row(cableGtDouble).values()
+                .forEach(entry -> provider.addTag(CustomTags.CABLES_DOUBLE).add(entry.asItem()));
+        GTMaterialBlocks.CABLE_BLOCKS.row(cableGtQuadruple).values()
+                .forEach(entry -> provider.addTag(CustomTags.CABLES_QUADRUPLE).add(entry.asItem()));
+        GTMaterialBlocks.CABLE_BLOCKS.row(cableGtOctal).values()
+                .forEach(entry -> provider.addTag(CustomTags.CABLES_OCTAL).add(entry.asItem()));
+        GTMaterialBlocks.CABLE_BLOCKS.row(cableGtHex).values()
+                .forEach(entry -> provider.addTag(CustomTags.CABLES_HEX).add(entry.asItem()));
+
+        provider.addTag(CustomTags.CABLES)
+                .addTag(CustomTags.CABLES_SINGLE)
+                .addTag(CustomTags.CABLES_DOUBLE)
+                .addTag(CustomTags.CABLES_QUADRUPLE)
+                .addTag(CustomTags.CABLES_OCTAL)
+                .addTag(CustomTags.CABLES_HEX);
+    }
+
+    private static void generateFluidPipeTags(RegistrateItemTagsProvider provider) {
+        GTMaterialBlocks.FLUID_PIPE_BLOCKS.row(pipeTinyFluid).values()
+                .forEach(entry -> provider.addTag(CustomTags.FLUID_PIPES_TINY).add(entry.asItem()));
+        GTMaterialBlocks.FLUID_PIPE_BLOCKS.row(pipeSmallFluid).values()
+                .forEach(entry -> provider.addTag(CustomTags.FLUID_PIPES_SMALL).add(entry.asItem()));
+        GTMaterialBlocks.FLUID_PIPE_BLOCKS.row(pipeNormalFluid).values()
+                .forEach(entry -> provider.addTag(CustomTags.FLUID_PIPES_NORMAL).add(entry.asItem()));
+        GTMaterialBlocks.FLUID_PIPE_BLOCKS.row(pipeLargeFluid).values()
+                .forEach(entry -> provider.addTag(CustomTags.FLUID_PIPES_LARGE).add(entry.asItem()));
+        GTMaterialBlocks.FLUID_PIPE_BLOCKS.row(pipeHugeFluid).values()
+                .forEach(entry -> provider.addTag(CustomTags.FLUID_PIPES_HUGE).add(entry.asItem()));
+        GTMaterialBlocks.FLUID_PIPE_BLOCKS.row(pipeQuadrupleFluid).values()
+                .forEach(entry -> provider.addTag(CustomTags.FLUID_PIPES_QUADRUPLE).add(entry.asItem()));
+        GTMaterialBlocks.FLUID_PIPE_BLOCKS.row(pipeNonupleFluid).values()
+                .forEach(entry -> provider.addTag(CustomTags.FLUID_PIPES_NONUPLE).add(entry.asItem()));
+
+        provider.addTag(CustomTags.FLUID_PIPES)
+                .addTag(CustomTags.FLUID_PIPES_TINY)
+                .addTag(CustomTags.FLUID_PIPES_SMALL)
+                .addTag(CustomTags.FLUID_PIPES_NORMAL)
+                .addTag(CustomTags.FLUID_PIPES_LARGE)
+                .addTag(CustomTags.FLUID_PIPES_HUGE)
+                .addTag(CustomTags.FLUID_PIPES_QUADRUPLE)
+                .addTag(CustomTags.FLUID_PIPES_NONUPLE);
+    }
+
+    private static void generateItemPipeTags(RegistrateItemTagsProvider provider) {
+        GTMaterialBlocks.ITEM_PIPE_BLOCKS.row(pipeSmallItem).values()
+                .forEach(entry -> provider.addTag(CustomTags.ITEM_PIPES_SMALL).add(entry.asItem()));
+        GTMaterialBlocks.ITEM_PIPE_BLOCKS.row(pipeNormalItem).values()
+                .forEach(entry -> provider.addTag(CustomTags.ITEM_PIPES_NORMAL).add(entry.asItem()));
+        GTMaterialBlocks.ITEM_PIPE_BLOCKS.row(pipeLargeItem).values()
+                .forEach(entry -> provider.addTag(CustomTags.ITEM_PIPES_LARGE).add(entry.asItem()));
+        GTMaterialBlocks.ITEM_PIPE_BLOCKS.row(pipeHugeItem).values()
+                .forEach(entry -> provider.addTag(CustomTags.ITEM_PIPES_HUGE).add(entry.asItem()));
+
+        GTMaterialBlocks.ITEM_PIPE_BLOCKS.row(pipeSmallRestrictive).values()
+                .forEach(entry -> provider.addTag(CustomTags.ITEM_PIPES_RESTRICTIVE_SMALL).add(entry.asItem()));
+        GTMaterialBlocks.ITEM_PIPE_BLOCKS.row(pipeNormalRestrictive).values()
+                .forEach(entry -> provider.addTag(CustomTags.ITEM_PIPES_RESTRICTIVE_NORMAL).add(entry.asItem()));
+        GTMaterialBlocks.ITEM_PIPE_BLOCKS.row(pipeLargeRestrictive).values()
+                .forEach(entry -> provider.addTag(CustomTags.ITEM_PIPES_RESTRICTIVE_LARGE).add(entry.asItem()));
+        GTMaterialBlocks.ITEM_PIPE_BLOCKS.row(pipeHugeRestrictive).values()
+                .forEach(entry -> provider.addTag(CustomTags.ITEM_PIPES_RESTRICTIVE_HUGE).add(entry.asItem()));
+
+        provider.addTag(CustomTags.ITEM_PIPES)
+                .addTag(CustomTags.ITEM_PIPES_SMALL)
+                .addTag(CustomTags.ITEM_PIPES_NORMAL)
+                .addTag(CustomTags.ITEM_PIPES_LARGE)
+                .addTag(CustomTags.ITEM_PIPES_HUGE)
+                .addTag(CustomTags.ITEM_PIPES_RESTRICTIVE_SMALL)
+                .addTag(CustomTags.ITEM_PIPES_RESTRICTIVE_NORMAL)
+                .addTag(CustomTags.ITEM_PIPES_RESTRICTIVE_LARGE)
+                .addTag(CustomTags.ITEM_PIPES_RESTRICTIVE_HUGE);
     }
 }

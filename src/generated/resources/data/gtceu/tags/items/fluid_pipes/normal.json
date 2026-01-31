@@ -1,0 +1,30 @@
+{
+  "values": [
+    "gtceu:tin_alloy_normal_fluid_pipe",
+    "gtceu:polybenzimidazole_normal_fluid_pipe",
+    "gtceu:chromium_normal_fluid_pipe",
+    "gtceu:tungsten_normal_fluid_pipe",
+    "gtceu:iridium_normal_fluid_pipe",
+    "gtceu:lead_normal_fluid_pipe",
+    "gtceu:gold_normal_fluid_pipe",
+    "gtceu:tungsten_steel_normal_fluid_pipe",
+    "gtceu:niobium_titanium_normal_fluid_pipe",
+    "gtceu:tungsten_carbide_normal_fluid_pipe",
+    "gtceu:bronze_normal_fluid_pipe",
+    "gtceu:titanium_normal_fluid_pipe",
+    "gtceu:vanadium_steel_normal_fluid_pipe",
+    "gtceu:neutronium_normal_fluid_pipe",
+    "gtceu:steel_normal_fluid_pipe",
+    "gtceu:potin_normal_fluid_pipe",
+    "gtceu:aluminium_normal_fluid_pipe",
+    "gtceu:polytetrafluoroethylene_normal_fluid_pipe",
+    "gtceu:polyethylene_normal_fluid_pipe",
+    "gtceu:naquadah_normal_fluid_pipe",
+    "gtceu:copper_normal_fluid_pipe",
+    "gtceu:stainless_steel_normal_fluid_pipe",
+    "gtceu:duranium_normal_fluid_pipe",
+    "gtceu:europium_normal_fluid_pipe",
+    "gtceu:treated_wood_normal_fluid_pipe",
+    "gtceu:wood_normal_fluid_pipe"
+  ]
+}

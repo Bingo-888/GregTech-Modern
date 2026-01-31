@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#gtceu:fluid_pipes/tiny",
+    "#gtceu:fluid_pipes/small",
+    "#gtceu:fluid_pipes/normal",
+    "#gtceu:fluid_pipes/large",
+    "#gtceu:fluid_pipes/huge",
+    "#gtceu:fluid_pipes/quadruple",
+    "#gtceu:fluid_pipes/nonuple"
+  ]
+}

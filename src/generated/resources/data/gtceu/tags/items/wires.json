@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#gtceu:wires/single",
+    "#gtceu:wires/double",
+    "#gtceu:wires/quadruple",
+    "#gtceu:wires/octal",
+    "#gtceu:wires/hex"
+  ]
+}
