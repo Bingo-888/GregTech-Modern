@@ -4,6 +4,7 @@ import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialEntry;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.api.recipe.ingredient.FluidContainerIngredient;
+import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeCategories;
 import com.gregtechceu.gtceu.config.ConfigHolder;
@@ -150,6 +151,18 @@ public class VanillaStandardRecipes {
                 .circuitMeta(9)
                 .outputItems(new ItemStack(Blocks.MELON))
                 .duration(200).EUt(2)
+                .save(provider);
+
+        COMPRESSOR_RECIPES.recipeBuilder("compressed_gravel")
+                .inputItems(new ItemStack(Blocks.GRAVEL, 9))
+                .outputItems(GTBlocks.COMPRESSED_GRAVEL.asStack())
+                .duration(300).EUt(2)
+                .save(provider);
+
+        COMPRESSOR_RECIPES.recipeBuilder("double_compressed_gravel")
+                .inputItems(GTBlocks.COMPRESSED_GRAVEL.asStack(9))
+                .outputItems(GTBlocks.DOUBLE_COMPRESSED_GRAVEL.asStack())
+                .duration(300).EUt(2)
                 .save(provider);
     }
 

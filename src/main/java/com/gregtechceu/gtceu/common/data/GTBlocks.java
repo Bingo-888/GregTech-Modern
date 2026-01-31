@@ -1193,6 +1193,27 @@ public class GTBlocks {
             .build()
             .register();
 
+    // Compressed Gravel Blocks
+    public static final BlockEntry<Block> COMPRESSED_GRAVEL = REGISTRATE
+            .block("compressed_gravel", Block::new)
+            .initialProperties(() -> Blocks.GRAVEL)
+            .properties(p -> p.strength(0.8f).sound(SoundType.GRAVEL))
+            .lang("Compressed Gravel")
+            .exBlockstate(GTModels.cubeAllModel(GTCEu.id("block/misc/compressed_gravel")))
+            .tag(BlockTags.MINEABLE_WITH_SHOVEL)
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> DOUBLE_COMPRESSED_GRAVEL = REGISTRATE
+            .block("double_compressed_gravel", Block::new)
+            .initialProperties(() -> Blocks.GRAVEL)
+            .properties(p -> p.strength(1.0f).sound(SoundType.GRAVEL))
+            .lang("Double Compressed Gravel")
+            .exBlockstate(GTModels.cubeAllModel(GTCEu.id("block/misc/double_compressed_gravel")))
+            .tag(BlockTags.MINEABLE_WITH_SHOVEL)
+            .simpleItem()
+            .register();
+
     public static void generateStoneBlocks() {
         // Stone type blocks
         ImmutableTable.Builder<StoneBlockType, StoneTypes, BlockEntry<Block>> builder = ImmutableTable.builder();

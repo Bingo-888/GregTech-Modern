@@ -88,6 +88,7 @@ import net.minecraftforge.event.*;
 import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.event.level.ChunkWatchEvent;
 import net.minecraftforge.event.level.LevelEvent;
@@ -670,6 +671,28 @@ public class ForgeCommonEventListener {
                     if (!player.onGround() || player.isUnderWater()) event.setNewSpeed(event.getOriginalSpeed() * 5);
                 }
             }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onFurnaceFuelBurnTime(FurnaceFuelBurnTimeEvent event) {
+        ItemStack itemStack = event.getItemStack();
+
+        // Lava Bucket: Disable as fuel
+        if (itemStack.is(Items.LAVA_BUCKET)) {
+            event.setBurnTime(0);
+            return;
+        }
+
+        // Diamond: Enable as fuel (102400 ticks = 5120 seconds)
+        if (itemStack.is(Items.DIAMOND)) {
+            event.setBurnTime(102400);
+            return;
+        }
+
+        // Diamond Block: Enable as fuel (1024000 ticks = 51200 seconds)
+        if (itemStack.is(Items.DIAMOND_BLOCK)) {
+            event.setBurnTime(1024000);
         }
     }
 }
