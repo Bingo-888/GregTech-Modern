@@ -93,6 +93,9 @@ public class GTRecipes {
         // GCYM
         GCYMRecipes.init(consumer);
 
+        // Ex Nihilo: Sequentia integration
+        com.gregtechceu.gtceu.integration.exnihilo.SieveRecipeLoader.init(consumer);
+
         // Config-dependent recipes
         RecipeAddition.init(consumer);
 

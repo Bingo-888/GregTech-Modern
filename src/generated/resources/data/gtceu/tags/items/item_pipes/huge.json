@@ -1,21 +1,21 @@
 {
   "values": [
     "gtceu:brass_huge_item_pipe",
-    "gtceu:polyvinyl_chloride_huge_item_pipe",
-    "gtceu:rose_gold_huge_item_pipe",
-    "gtceu:magnalium_huge_item_pipe",
-    "gtceu:tin_huge_item_pipe",
-    "gtceu:sterling_silver_huge_item_pipe",
-    "gtceu:americium_huge_item_pipe",
-    "gtceu:black_bronze_huge_item_pipe",
     "gtceu:ultimet_huge_item_pipe",
-    "gtceu:electrum_huge_item_pipe",
+    "gtceu:americium_huge_item_pipe",
     "gtceu:osmium_huge_item_pipe",
-    "gtceu:osmiridium_huge_item_pipe",
-    "gtceu:nickel_huge_item_pipe",
     "gtceu:cobalt_brass_huge_item_pipe",
-    "gtceu:cupronickel_huge_item_pipe",
+    "gtceu:black_bronze_huge_item_pipe",
+    "gtceu:tin_huge_item_pipe",
+    "gtceu:osmiridium_huge_item_pipe",
+    "gtceu:magnalium_huge_item_pipe",
+    "gtceu:sterling_silver_huge_item_pipe",
     "gtceu:cobalt_huge_item_pipe",
-    "gtceu:platinum_huge_item_pipe"
+    "gtceu:cupronickel_huge_item_pipe",
+    "gtceu:nickel_huge_item_pipe",
+    "gtceu:electrum_huge_item_pipe",
+    "gtceu:platinum_huge_item_pipe",
+    "gtceu:rose_gold_huge_item_pipe",
+    "gtceu:polyvinyl_chloride_huge_item_pipe"
   ]
 }

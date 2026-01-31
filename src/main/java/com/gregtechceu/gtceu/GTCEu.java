@@ -225,5 +225,9 @@ public class GTCEu {
         public static boolean isCreateLoaded() {
             return isModLoaded(GTValues.MODID_CREATE);
         }
+
+        public static boolean isExNihiloLoaded() {
+            return isModLoaded(GTValues.MODID_EXNIHILO);
+        }
     }
 }

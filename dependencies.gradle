@@ -71,6 +71,9 @@ dependencies {
     modCompileOnly(forge.cc.tweaked.core.api)
     modCompileOnly(forge.cc.tweaked.forge.api)
 
+    // Ex Nihilo: Sequentia
+    modCompileOnly("curse.maven:exnihilosequentia-400012:5988562")
+
     // Standard runtime mods //
     modLocalRuntime(forge.jade)
     modLocalRuntime(forge.ae2)
@@ -119,4 +122,8 @@ dependencies {
     modExtraLocalRuntime(forge.ponder)
     modExtraLocalRuntime(variantOf(forge.create) { classifier("slim") })
     modExtraLocalRuntime(forge.flywheel.forge)
+
+    // Ex Nihilo: Sequentia and its dependency
+    modExtraLocalRuntime("curse.maven:novacore-923669:4815411")
+    modExtraLocalRuntime("curse.maven:exnihilosequentia-400012:5988562")
 }

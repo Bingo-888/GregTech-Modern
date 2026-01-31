@@ -529,6 +529,16 @@ public class MetaTileEntityLoader {
                 new MaterialEntry(TagPrefix.plate, GTMaterials.WroughtIron), 'S',
                 new MaterialEntry(TagPrefix.plate, GTMaterials.Steel), 'P',
                 new MaterialEntry(TagPrefix.pipeSmallFluid, GTMaterials.TinAlloy));
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "steam_ore_sieve_bronze",
+                GTMachines.STEAM_ORE_SIEVE.left().asStack(), "PXP", "XMX", "SXS", 'M',
+                GTBlocks.BRONZE_HULL.asStack(), 'X', new MaterialEntry(TagPrefix.pipeSmallFluid, GTMaterials.Bronze),
+                'P', CustomTags.PISTONS, 'S', new ItemStack(Blocks.IRON_BARS));
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "steam_ore_sieve_steel",
+                GTMachines.STEAM_ORE_SIEVE.right().asStack(), "WSW", "PMP", "WWW", 'M',
+                GTMachines.STEAM_ORE_SIEVE.left().asStack(), 'W',
+                new MaterialEntry(TagPrefix.plate, GTMaterials.WroughtIron), 'S',
+                new MaterialEntry(TagPrefix.plate, GTMaterials.Steel), 'P',
+                new MaterialEntry(TagPrefix.pipeSmallFluid, GTMaterials.TinAlloy));
         VanillaRecipeHelper.addShapedRecipe(provider, true, "steam_miner_bronze",
                 GTMachines.STEAM_MINER.first().asStack(),
                 "DSD", "SMS", "GSG",

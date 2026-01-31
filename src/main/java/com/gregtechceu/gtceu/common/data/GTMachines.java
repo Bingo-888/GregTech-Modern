@@ -131,6 +131,8 @@ public class GTMachines {
             "alloy_smelter", GTRecipeTypes.ALLOY_SMELTER_RECIPES);
     public static final Pair<MachineDefinition, MachineDefinition> STEAM_ROCK_CRUSHER = registerSimpleSteamMachines(
             "rock_crusher", GTRecipeTypes.ROCK_BREAKER_RECIPES);
+    public static final Pair<MachineDefinition, MachineDefinition> STEAM_ORE_SIEVE = registerSimpleSteamMachines(
+            "ore_sieve", GTRecipeTypes.SIEVE_RECIPES);
     public static final Pair<MachineDefinition, MachineDefinition> STEAM_MINER = registerSteamMachines(
             "steam_miner",
             (holder, isHP) -> isHP ? new SteamMinerMachine(holder, true, 240, 6, 0, 32) :
