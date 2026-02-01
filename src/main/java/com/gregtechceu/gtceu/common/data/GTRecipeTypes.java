@@ -77,7 +77,8 @@ public class GTRecipeTypes {
             .setSound(GTSoundEntries.FURNACE);
 
     public final static GTRecipeType SIEVE_RECIPES = register("ore_sieve", STEAM)
-            .setMaxIOSize(2, 6, 0, 0)
+            .setMaxIOSize(3, 1, 0, 0)  // 3 inputs: material, mesh (notConsumable), circuit (notConsumable); 1 output
+            .setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_SIFT, UP_TO_DOWN)
             .setSound(new ExistingSoundEntry(SoundEvents.SAND_PLACE, SoundSource.BLOCKS));
 

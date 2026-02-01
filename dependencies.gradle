@@ -71,7 +71,8 @@ dependencies {
     modCompileOnly(forge.cc.tweaked.core.api)
     modCompileOnly(forge.cc.tweaked.forge.api)
 
-    // Ex Nihilo: Sequentia
+    // Ex Nihilo: Sequentia and its dependency NovaCore
+    modCompileOnly("curse.maven:novacore-923669:4815411")
     modCompileOnly("curse.maven:exnihilosequentia-400012:5988562")
 
     // Standard runtime mods //
