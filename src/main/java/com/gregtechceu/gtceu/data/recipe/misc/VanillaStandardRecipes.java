@@ -238,6 +238,7 @@ public class VanillaStandardRecipes {
                 .inputItems(dust, Glass)
                 .notConsumable(SHAPE_MOLD_BOTTLE)
                 .outputItems(new ItemStack(Items.GLASS_BOTTLE))
+                .category(GTRecipeCategories.INGOT_MOLDING)
                 .addMaterialInfo(true)
                 .save(provider);
 
@@ -263,6 +264,7 @@ public class VanillaStandardRecipes {
                 .inputItems(dust, Glass)
                 .notConsumable(SHAPE_MOLD_BLOCK)
                 .outputItems(new ItemStack(Blocks.GLASS, 1))
+                .category(GTRecipeCategories.INGOT_MOLDING)
                 .save(provider);
 
         CUTTER_RECIPES.recipeBuilder("cut_glass_block_to_plate").duration(50).EUt(VA[ULV])
