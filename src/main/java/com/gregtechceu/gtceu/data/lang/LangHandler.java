@@ -1362,6 +1362,10 @@ public class LangHandler {
         provider.add("gtceu.gui.config_slot.auto_pull_managed", "§4Disabled:§7 Managed by Auto-Pull");
         provider.add("gtceu.gui.me_bus.auto_pull_button", "Click to toggle automatic item pulling from ME");
 
+        // Ore Sieve GUI
+        provider.add("gtceu.gui.sieve.expand_outputs", "Click to view all output slots");
+        provider.add("gtceu.gui.sieve.all_outputs", "Sieve Outputs");
+
         // Decor Stuff
         replace(provider, "block.gtceu.yellow_stripes_block.a", "Yellow Stripes Block");
         replace(provider, "block.gtceu.yellow_stripes_block.b", "Yellow Stripes Block");

@@ -76,6 +76,7 @@ import com.gregtechceu.gtceu.data.recipe.CraftingComponent;
 import com.gregtechceu.gtceu.data.recipe.GTCraftingComponents;
 import com.gregtechceu.gtceu.data.recipe.builder.GTRecipeBuilder;
 import com.gregtechceu.gtceu.data.recipe.misc.RecyclingRecipes;
+import com.gregtechceu.gtceu.integration.exnihilo.SieveRecipeLoader;
 import com.gregtechceu.gtceu.integration.kjs.builders.*;
 import com.gregtechceu.gtceu.integration.kjs.builders.block.ActiveBlockBuilder;
 import com.gregtechceu.gtceu.integration.kjs.builders.block.CoilBlockBuilder;
@@ -520,6 +521,12 @@ public class GregTechKubeJSPlugin extends KubeJSPlugin {
                 RecipeManagerHandler.addProxyRecipesToLookup(recipesByName, gtRecipeType, type, list);
             });
             RecipeManagerHandler.addRecipesToLookup(recipesByName, gtRecipeType);
+
+            // Inject Ex Nihilo sifting recipes into the ore sieve staging pipeline
+            if (gtRecipeType == GTRecipeTypes.SIEVE_RECIPES && GTCEu.Mods.isExNihiloLoaded()) {
+                SieveRecipeLoader.injectSieveRecipesFlat(recipesByName);
+            }
+
             gtRecipeType.getAdditionHandler().completeStaging();
         }
         MapIngredientPool.clear();

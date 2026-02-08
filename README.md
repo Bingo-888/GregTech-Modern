@@ -1,12 +1,12 @@
 <p align="center"><img src="https://raw.githubusercontent.com/GregTechCEu/Branding/refs/heads/master/gregtech_ceu_modern_logo_large_modern.png" alt="Logo"></p>
 <h1 align="center">GregTech CEu: Modern (BingoTech Fork)</h1>
-<p align="center"><b>A custom fork of GregTech CEu: Modern for the BingoTech Skyblock Modpack.</b></p>
+<p align="center"><b>A custom fork of GregTech CEu: Modern, built for the author's "BingoTech" skyblock modpack.</b></p>
 
 ---
 
 ## About This Fork
 
-This repository is a fork of [GregTech CEu: Modern](https://github.com/GregTechCEu/GregTech-Modern), customized for the **BingoTech Skyblock Modpack**.
+This repository is a fork of [GregTech CEu: Modern](https://github.com/GregTechCEu/GregTech-Modern), built specifically for the author's **"BingoTech"** skyblock modpack. "BingoTech" is the name of the modpack itself, not a generic skyblock pack.
 
 **Added Features:**
 - Steam Ore Sieve series (integration with Ex Nihilo: Sequentia)

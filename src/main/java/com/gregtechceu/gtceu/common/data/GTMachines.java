@@ -25,6 +25,7 @@ import com.gregtechceu.gtceu.common.machine.electric.*;
 import com.gregtechceu.gtceu.common.machine.multiblock.part.*;
 import com.gregtechceu.gtceu.common.machine.multiblock.part.monitor.AdvancedMonitorPartMachine;
 import com.gregtechceu.gtceu.common.machine.multiblock.part.monitor.MonitorPartMachine;
+import com.gregtechceu.gtceu.common.machine.steam.SimpleSteamSieveMachine;
 import com.gregtechceu.gtceu.common.machine.steam.SteamLiquidBoilerMachine;
 import com.gregtechceu.gtceu.common.machine.steam.SteamMinerMachine;
 import com.gregtechceu.gtceu.common.machine.steam.SteamSolarBoiler;
@@ -131,8 +132,15 @@ public class GTMachines {
             "alloy_smelter", GTRecipeTypes.ALLOY_SMELTER_RECIPES);
     public static final Pair<MachineDefinition, MachineDefinition> STEAM_ROCK_CRUSHER = registerSimpleSteamMachines(
             "rock_crusher", GTRecipeTypes.ROCK_BREAKER_RECIPES);
-    public static final Pair<MachineDefinition, MachineDefinition> STEAM_ORE_SIEVE = registerSimpleSteamMachines(
-            "ore_sieve", GTRecipeTypes.SIEVE_RECIPES);
+    public static final Pair<MachineDefinition, MachineDefinition> STEAM_ORE_SIEVE = registerSteamMachines(
+            "steam_ore_sieve", SimpleSteamSieveMachine::new,
+            (pressure, builder) -> builder
+                    .rotationState(RotationState.ALL)
+                    .recipeType(GTRecipeTypes.SIEVE_RECIPES)
+                    .recipeModifier(SimpleSteamMachine::recipeModifier)
+                    .modelProperty(GTMachineModelProperties.VENT_DIRECTION, RelativeDirection.BACK)
+                    .workableSteamHullModel(pressure, GTCEu.id("block/machines/ore_sieve"))
+                    .register());
     public static final Pair<MachineDefinition, MachineDefinition> STEAM_MINER = registerSteamMachines(
             "steam_miner",
             (holder, isHP) -> isHP ? new SteamMinerMachine(holder, true, 240, 6, 0, 32) :

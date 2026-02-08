@@ -1,9 +1,12 @@
 package com.gregtechceu.gtceu.core.mixins;
 
+import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.recipe.lookup.MapIngredientPool;
 import com.gregtechceu.gtceu.api.recipe.lookup.RecipeManagerHandler;
+import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.common.item.armor.PowerlessJetpack;
+import com.gregtechceu.gtceu.integration.exnihilo.SieveRecipeLoader;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -49,11 +52,15 @@ public abstract class RecipeManagerMixin {
                 RecipeManagerHandler.addProxyRecipesToLookup(recipesByID, gtRecipeType, type, list);
             });
             var recipesByID = recipes.get(gtRecipeType);
-            if (recipesByID == null) {
-                gtRecipeType.getAdditionHandler().completeStaging();
-                continue;
+            if (recipesByID != null) {
+                RecipeManagerHandler.addRecipesToLookup(recipesByID, gtRecipeType);
             }
-            RecipeManagerHandler.addRecipesToLookup(recipesByID, gtRecipeType);
+
+            // Inject Ex Nihilo sifting recipes into the ore sieve staging pipeline
+            if (gtRecipeType == GTRecipeTypes.SIEVE_RECIPES && GTCEu.Mods.isExNihiloLoaded()) {
+                SieveRecipeLoader.injectSieveRecipes(recipes);
+            }
+
             gtRecipeType.getAdditionHandler().completeStaging();
         }
         MapIngredientPool.clear();

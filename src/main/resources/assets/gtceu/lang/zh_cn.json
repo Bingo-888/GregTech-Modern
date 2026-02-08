@@ -2444,6 +2444,8 @@
     "gtceu.gui.machinemode.tab_tooltip": "更改当前机器模式",
     "gtceu.gui.machinemode.title": "当前机器模式",
     "gtceu.gui.me_bus.auto_pull_button": "单击以切换ME自动拉取模式",
+    "gtceu.gui.sieve.expand_outputs": "点击查看所有输出槽位",
+    "gtceu.gui.sieve.all_outputs": "筛矿输出",
     "gtceu.gui.me_network.offline": "网络状态：§4离线§r",
     "gtceu.gui.me_network.online": "网络状态：§2在线§r",
     "gtceu.gui.multiblock.voiding_mode": "销毁模式：",
