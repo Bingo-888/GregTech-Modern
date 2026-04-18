@@ -2,6 +2,7 @@ package com.gregtechceu.gtceu.common.machine.steam;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
+import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
 import com.gregtechceu.gtceu.api.machine.steam.SimpleSteamMachine;
 import com.gregtechceu.gtceu.api.machine.trait.NotifiableItemStackHandler;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
@@ -9,6 +10,10 @@ import com.gregtechceu.gtceu.common.data.GTMachines;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.gametest.util.TestUtils;
+
+import com.lowdragmc.lowdraglib.gui.modular.ModularUI;
+import com.lowdragmc.lowdraglib.gui.widget.DraggableScrollableWidgetGroup;
+import com.lowdragmc.lowdraglib.gui.widget.Widget;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.gametest.framework.BeforeBatch;
@@ -21,6 +26,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.gametest.GameTestHolder;
 import net.minecraftforge.gametest.PrefixGameTestTemplate;
+
+import java.util.List;
 
 @PrefixGameTestTemplate(false)
 @GameTestHolder(GTCEu.MOD_ID)
@@ -76,6 +83,44 @@ public class SteamOreSieveTest {
 
         helper.assertFalse(hasInjectedEnsRecipe,
                 "Found Ex Nihilo-injected sieve recipes while Ex Nihilo is not loaded");
+        helper.succeed();
+    }
+
+    @GameTest(template = "empty", batch = "SteamOreSieve")
+    public static void steamOreSieveGuiUsesScrollableOutputLayout(GameTestHelper helper) {
+        SimpleSteamSieveMachine machine = (SimpleSteamSieveMachine) TestUtils
+                .setMachine(helper, new BlockPos(0, 1, 0), GTMachines.STEAM_ORE_SIEVE.right());
+        ModularUI ui = machine.createUI(helper.makeMockPlayer());
+
+        List<Widget> widgets = ui.getFlatWidgetCollection();
+        DraggableScrollableWidgetGroup outputGroup = widgets.stream()
+                .filter(DraggableScrollableWidgetGroup.class::isInstance)
+                .map(DraggableScrollableWidgetGroup.class::cast)
+                .findFirst()
+                .orElse(null);
+
+        helper.assertTrue(outputGroup != null, "Steam Ore Sieve UI is missing scrollable output group");
+
+        long outputSlotsInScrollable = widgets.stream()
+                .filter(com.gregtechceu.gtceu.api.gui.widget.SlotWidget.class::isInstance)
+                .filter(widget -> widget.getParent() == outputGroup)
+                .count();
+        int expectedOutputSlots = machine.getRecipeType().getMaxOutputs(ItemRecipeCapability.CAP);
+        helper.assertTrue(outputSlotsInScrollable == expectedOutputSlots,
+                "Scrollable output slot count mismatch: expected %d, got %d"
+                        .formatted(expectedOutputSlots, outputSlotsInScrollable));
+
+        int scrollBottom = outputGroup.getPosition().y + outputGroup.getSize().height;
+        int firstSlotBelowScrollable = widgets.stream()
+                .filter(com.gregtechceu.gtceu.api.gui.widget.SlotWidget.class::isInstance)
+                .filter(widget -> widget.getParent() != outputGroup)
+                .mapToInt(widget -> widget.getPosition().y)
+                .filter(y -> y >= outputGroup.getPosition().y)
+                .min()
+                .orElse(Integer.MAX_VALUE);
+        helper.assertTrue(firstSlotBelowScrollable >= scrollBottom + 6,
+                "Player inventory overlaps with scrollable output area");
+
         helper.succeed();
     }
 }
