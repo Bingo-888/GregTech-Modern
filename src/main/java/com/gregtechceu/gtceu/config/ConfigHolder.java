@@ -104,6 +104,30 @@ public class ConfigHolder {
                 "Default: true" })
         public boolean harderCharcoalRecipe = true; // default true
         @Configurable
+        @Configurable.Comment({
+                "Burn time override for Lava Bucket in vanilla furnace.",
+                "Set to -1 to keep vanilla behavior, 0 to disable as fuel.",
+                "Default: 0"
+        })
+        @Configurable.Range(min = -1, max = Integer.MAX_VALUE)
+        public int lavaBucketFurnaceBurnTime = 0;
+        @Configurable
+        @Configurable.Comment({
+                "Burn time override for Diamond in vanilla furnace.",
+                "Set to -1 to keep vanilla behavior.",
+                "Default: 102400"
+        })
+        @Configurable.Range(min = -1, max = Integer.MAX_VALUE)
+        public int diamondFurnaceBurnTime = 102400;
+        @Configurable
+        @Configurable.Comment({
+                "Burn time override for Diamond Block in vanilla furnace.",
+                "Set to -1 to keep vanilla behavior.",
+                "Default: 1024000"
+        })
+        @Configurable.Range(min = -1, max = Integer.MAX_VALUE)
+        public int diamondBlockFurnaceBurnTime = 1024000;
+        @Configurable
         @Configurable.Comment({ "Whether to make the Flint and Steel recipe require steel parts.", "Default: true." })
         public boolean flintAndSteelRequireSteel = true; // default true
         @Configurable

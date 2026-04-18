@@ -677,22 +677,33 @@ public class ForgeCommonEventListener {
     @SubscribeEvent
     public static void onFurnaceFuelBurnTime(FurnaceFuelBurnTimeEvent event) {
         ItemStack itemStack = event.getItemStack();
+        var config = ConfigHolder.INSTANCE;
+        if (config == null) return;
 
-        // Lava Bucket: Disable as fuel
+        // Lava Bucket: configurable override (-1 keeps vanilla behavior)
         if (itemStack.is(Items.LAVA_BUCKET)) {
-            event.setBurnTime(0);
+            int burnTime = config.recipes.lavaBucketFurnaceBurnTime;
+            if (burnTime >= 0) {
+                event.setBurnTime(burnTime);
+            }
             return;
         }
 
-        // Diamond: Enable as fuel (102400 ticks = 5120 seconds)
+        // Diamond: configurable override (-1 keeps vanilla behavior)
         if (itemStack.is(Items.DIAMOND)) {
-            event.setBurnTime(102400);
+            int burnTime = config.recipes.diamondFurnaceBurnTime;
+            if (burnTime >= 0) {
+                event.setBurnTime(burnTime);
+            }
             return;
         }
 
-        // Diamond Block: Enable as fuel (1024000 ticks = 51200 seconds)
+        // Diamond Block: configurable override (-1 keeps vanilla behavior)
         if (itemStack.is(Items.DIAMOND_BLOCK)) {
-            event.setBurnTime(1024000);
+            int burnTime = config.recipes.diamondBlockFurnaceBurnTime;
+            if (burnTime >= 0) {
+                event.setBurnTime(burnTime);
+            }
         }
     }
 }
