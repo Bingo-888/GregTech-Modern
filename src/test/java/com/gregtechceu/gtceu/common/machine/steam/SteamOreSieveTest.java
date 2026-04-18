@@ -64,4 +64,18 @@ public class SteamOreSieveTest {
                     "Steam Ore Sieve did not consume steam");
         });
     }
+
+    @GameTest(template = "empty", batch = "SteamOreSieve")
+    public static void steamOreSieveSkipsEnsInjectionWithoutExNihilo(GameTestHelper helper) {
+        helper.assertFalse(GTCEu.Mods.isExNihiloLoaded(), "Ex Nihilo is unexpectedly loaded in this test environment");
+
+        boolean hasInjectedEnsRecipe = helper.getLevel().getRecipeManager().getAllRecipesFor(GTRecipeTypes.SIEVE_RECIPES)
+                .stream()
+                .anyMatch(recipe -> recipe.getId().getNamespace().equals(GTCEu.MOD_ID) &&
+                        recipe.getId().getPath().startsWith("ens_sieve_"));
+
+        helper.assertFalse(hasInjectedEnsRecipe,
+                "Found Ex Nihilo-injected sieve recipes while Ex Nihilo is not loaded");
+        helper.succeed();
+    }
 }
