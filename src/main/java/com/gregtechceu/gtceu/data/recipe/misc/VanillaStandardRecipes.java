@@ -164,6 +164,32 @@ public class VanillaStandardRecipes {
                 .outputItems(GTBlocks.DOUBLE_COMPRESSED_GRAVEL.asStack())
                 .duration(300).EUt(2)
                 .save(provider);
+
+        PACKER_RECIPES.recipeBuilder("gravel_from_compressed_gravel")
+                .inputItems(GTBlocks.COMPRESSED_GRAVEL.asStack())
+                .outputItems(new ItemStack(Blocks.GRAVEL, 9))
+                .circuitMeta(9)
+                .duration(200).EUt(2)
+                .save(provider);
+
+        FORGE_HAMMER_RECIPES.recipeBuilder("gravel_from_compressed_gravel_hammer")
+                .inputItems(GTBlocks.COMPRESSED_GRAVEL.asStack())
+                .outputItems(new ItemStack(Blocks.GRAVEL, 9))
+                .duration(200).EUt(2)
+                .save(provider);
+
+        PACKER_RECIPES.recipeBuilder("compressed_gravel_from_double_compressed_gravel")
+                .inputItems(GTBlocks.DOUBLE_COMPRESSED_GRAVEL.asStack())
+                .outputItems(GTBlocks.COMPRESSED_GRAVEL.asStack(9))
+                .circuitMeta(9)
+                .duration(200).EUt(2)
+                .save(provider);
+
+        FORGE_HAMMER_RECIPES.recipeBuilder("compressed_gravel_from_double_compressed_gravel_hammer")
+                .inputItems(GTBlocks.DOUBLE_COMPRESSED_GRAVEL.asStack())
+                .outputItems(GTBlocks.COMPRESSED_GRAVEL.asStack(9))
+                .duration(200).EUt(2)
+                .save(provider);
     }
 
     /**
