@@ -35,8 +35,10 @@ import net.minecraft.world.phys.BlockHitResult;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import lombok.Getter;
 import lombok.Setter;
+import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.VisibleForTesting;
 
 import java.util.*;
 
@@ -178,6 +180,19 @@ public abstract class SteamWorkableMachine extends SteamMachine
     @Override
     public GTRecipeType getRecipeType() {
         return recipeTypes[activeRecipeType];
+    }
+
+    /**
+     * Sets a recipe type of the machine.
+     * FOR INTERNAL / TESTING USE ONLY!
+     * NOT SUPPORTED FOR PRODUCTION USE!
+     *
+     * @param newType The new recipe type
+     */
+    @ApiStatus.Internal
+    @VisibleForTesting
+    public void setRecipeType(GTRecipeType newType) {
+        recipeTypes[activeRecipeType] = newType;
     }
 
     @Override
