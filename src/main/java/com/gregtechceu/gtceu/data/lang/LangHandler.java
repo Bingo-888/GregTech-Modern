@@ -1363,7 +1363,7 @@ public class LangHandler {
         provider.add("gtceu.gui.me_bus.auto_pull_button", "Click to toggle automatic item pulling from ME");
 
         // Ore Sieve GUI
-        provider.add("gtceu.gui.sieve.expand_outputs", "Click to view all output slots");
+        provider.add("gtceu.gui.sieve.expand_outputs", "Scroll to view all outputs");
         provider.add("gtceu.gui.sieve.all_outputs", "Sieve Outputs");
 
         // Decor Stuff

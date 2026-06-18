@@ -15,6 +15,7 @@ import com.lowdragmc.lowdraglib.gui.widget.ProgressWidget;
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -59,9 +60,10 @@ public class SimpleSteamSieveMachine extends SimpleSteamMachine {
         // Layout from top to bottom:
         // y=5: Title
         // y=20: Input slots (3 slots = 54px)
-        // y=74: Output scrollable area (3 rows max = 54px)
-        // y=134: Player inventory (76px height including backpack + hotbar)
-        // Total: ~210px
+        // y=78: Output label
+        // y=88: Output scrollable area (3 rows max = 54px)
+        // y=148: Player inventory (76px height including backpack + hotbar)
+        // Total: ~224px
         int guiWidth = 176;
         int titleY = 5;
         int inputY = 20;
@@ -73,7 +75,8 @@ public class SimpleSteamSieveMachine extends SimpleSteamMachine {
         int slotSize = 18;
         int scrollBarWidth = 8;
         int outputAreaX = 7;
-        int outputAreaY = inputY + maxInputs * slotSize + 4;
+        int outputLabelY = inputY + maxInputs * slotSize + 4;
+        int outputAreaY = outputLabelY + 10;
         int outputContentW = cols * slotSize;
         int outputContentH = visibleRows * slotSize;
         int outputWidgetW = outputContentW + scrollBarWidth + 4;
@@ -105,10 +108,15 @@ public class SimpleSteamSieveMachine extends SimpleSteamMachine {
                 .setPredicate(recipeLogic::isWaiting));
 
         // --- Scrollable output slots ---
+        modularUI.widget(new LabelWidget(outputAreaX, outputLabelY, "gtceu.gui.sieve.all_outputs"));
+
         var scrollable = new DraggableScrollableWidgetGroup(
                 outputAreaX, outputAreaY, outputWidgetW, outputContentH);
         scrollable.setYScrollBarWidth(scrollBarWidth);
         scrollable.setYBarStyle(GuiTextures.SLIDER_BACKGROUND_VERTICAL, GuiTextures.BUTTON);
+        if (totalRows > visibleRows) {
+            scrollable.setHoverTooltips(Component.translatable("gtceu.gui.sieve.expand_outputs"));
+        }
 
         for (int i = 0; i < totalOutputSlots; i++) {
             int col = i % cols;
