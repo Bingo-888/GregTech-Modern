@@ -42,9 +42,9 @@ public class MachineLang {
         provider.add("gtceu.machine.hp_steam_rock_crusher.tooltip",
                 "§7Place Water and Lava horizontally adjacent");
         provider.add("gtceu.machine.lp_steam_ore_sieve.tooltip",
-                "§7Sifts materials with a mesh");
+                "§7Sifts blocks with a mesh; chanced outputs");
         provider.add("gtceu.machine.hp_steam_ore_sieve.tooltip",
-                "§7Sifts materials with a mesh");
+                "§7Faster than Low Pressure Steam Ore Sieve");
         provider.add("gtceu.machine.steam_miner.tooltip", "§7Mines ores below the Miner!");
 
         provider.add("gtceu.machine.combustion_generator.tooltip", "§7Requires flammable Liquids");
